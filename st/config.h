@@ -5,6 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
+/* Gray-magenta-pink config with scrollback */
+
 static char *font = "Source Code Pro:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
@@ -85,31 +88,30 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#505050", /* black   */
-	[1] = "#d77f7a", /* red     */
-	[2] = "#c6ca67", /* green   */
-	[3] = "#f6d16a", /* yellow  */
-	[4] = "#4c5359", /* blue    */
-	[5] = "#99828e", /* magenta */
-	[6] = "#a2ccca", /* cyan    */
-	[7] = "#5e5e5e", /* white   */
-	
-	/* 8 bright colors */
-	[8]  = "#5c5c5c", /* black   */
-	[9]  = "#d77f7a", /* red     */
-	[10] = "#b5bc6d", /* green   */
-	[11] = "#877f69", /* yellow  */
-	[12] = "#89abba", /* blue    */
-	[13] = "#cca8bb", /* magenta */
-	[14] = "#a2ccca", /* cyan    */
-	[15] = "#707070", /* white   */
-	
+    [0] = "#33303b", 
+    [1] = "#FF9BB8", 
+    [2] = "#00E3FF", 
+    [3] = "#f3f99d", 
+    [4] = "#9aedfe", 
+    [5] = "#ff6ac1", 
+    [6] = "#FF9BB8", 
+    [7] = "#FFFFFF", 
 
-    /* special colors */
-    [256] = "#272d32", /* background */
-    [257] = "#b8b3a3", /* foreground */
+    /* 8 bright colors */
+    [8] = "#4f4b58",
+    [9] = "#FF9BB8",
+    [10] = "#00E3FF",
+    [11] = "#f3f99d",
+    [12] = "#FF9BB8",
+    [13] = "#ff6ac1",
+    [14] = "#9aedfe",
+    [15] = "#FFFFFF",
 
 	[255] = 0,
+
+    /* special colors */
+    [256] = "#33393B", /* background */
+    [257] = "#b8b3a3" /* foreground */
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	/*"#cccccc",
