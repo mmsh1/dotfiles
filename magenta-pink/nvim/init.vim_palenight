@@ -12,10 +12,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
-Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python highligh
+Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python highlight
 Plugin 'sheerun/vim-polyglot'
 Plugin 'luochen1990/rainbow' " Brackets highlight
-Plugin 'morhetz/gruvbox' " Main highlight
+Plugin 'drewtempelmeyer/palenight.vim' " Main highlight
 Plugin 'vim-airline/vim-airline' " Status bar
 
 call vundle#end()            " required
@@ -56,27 +56,22 @@ set nobackup
 set noswapfile
 " }}} UI Config
 
-let g:gruvbox_italic=1
-let g:gruvbox_bold=1
-let g:gruvbox_underline=1
-let g:gruvbox_undercurl=1
-let g:gruvbox_contrast_dark='hard'
-
-autocmd ColorScheme * highlight Normal ctermbg=NONE
-
 let g:rainbow_active = 1
 
-let g:airline_theme = "gruvbox"
-let g:airline_powerline_fonts = 1
+set background=dark
+colorscheme palenight
+let g:palenight_terminal_italics=1
+let g:lightline = { 'colorscheme': 'palenight' }
+let g:airline_theme = "palenight"
+
+let g:airline_powerline_fonts = 1 
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_section_z = "\ue0a1:%l/%L Col:%c"
 let g:Powerline_symbols='unicode'
-let g:airline#extensions#xkblayout#enabled = 0
+let g:airline#extensions#xkblayout#enabled = 0 
 
 syntax enable
-set t_Co=256
-set background=dark
-colorscheme gruvbox
+
 "in my i3 it creates ugly border in bottom and right sides
 "maybe it works better in bspwm
-"set termguicolors 
+set termguicolors 
