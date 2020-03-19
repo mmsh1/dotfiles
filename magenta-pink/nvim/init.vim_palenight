@@ -54,6 +54,10 @@ set showmatch                " highlight matching brace
 set laststatus=2             " window will always have a status line
 set nobackup
 set noswapfile
+
+set list " Display unprintable characters f12 - switches
+set listchars=tab:•\ ,trail:•,extends:»,precedes:« " Unprintable chars mapping
+
 " }}} UI Config
 
 let g:rainbow_active = 1
