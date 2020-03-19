@@ -42,7 +42,7 @@ set shiftwidth=4	" number of spaces to use for autoindent
 set expandtab		" tabs are space
 set autoindent
 set copyindent		 " copy indent from the previous line
-" }}} Spaces & Tabs" 
+" }}} Spaces & Tabs"
 
 " UI Config {{{
 set hidden
@@ -68,14 +68,14 @@ let g:palenight_terminal_italics=1
 let g:lightline = { 'colorscheme': 'palenight' }
 let g:airline_theme = "palenight"
 
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_section_z = "\ue0a1:%l/%L Col:%c"
 let g:Powerline_symbols='unicode'
-let g:airline#extensions#xkblayout#enabled = 0 
+let g:airline#extensions#xkblayout#enabled = 0
 
 syntax enable
 
 "in my i3 it creates ugly border in bottom and right sides
 "maybe it works better in bspwm
-set termguicolors 
+set termguicolors

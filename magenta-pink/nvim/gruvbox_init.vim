@@ -42,7 +42,7 @@ set shiftwidth=4	" number of spaces to use for autoindent
 set expandtab		" tabs are space
 set autoindent
 set copyindent		 " copy indent from the previous line
-" }}} Spaces & Tabs" 
+" }}} Spaces & Tabs"
 
 " UI Config {{{
 set hidden
@@ -83,4 +83,4 @@ set background=dark
 colorscheme gruvbox
 "in my i3 it creates ugly border in bottom and right sides
 "maybe it works better in bspwm
-"set termguicolors 
+"set termguicolors
