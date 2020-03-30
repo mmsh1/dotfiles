@@ -1,16 +1,16 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, don't act like VI
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=/home/shimanov/.config/nvim/bundle/Vundle.vim
-call vundle#begin('/home/shimanov/.config/nvim/bundle')
+set rtp+=/home/mmsh/.config/nvim/bundle/Vundle.vim
+call vundle#begin('/home/mmsh/.config/nvim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
 Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python highlight
 Plugin 'sheerun/vim-polyglot'

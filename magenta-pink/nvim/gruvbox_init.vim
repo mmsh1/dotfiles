@@ -17,6 +17,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'luochen1990/rainbow' " Brackets highlight
 Plugin 'morhetz/gruvbox' " Main highlight
 Plugin 'vim-airline/vim-airline' " Status bar
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
