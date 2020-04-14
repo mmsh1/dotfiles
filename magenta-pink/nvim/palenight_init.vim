@@ -1,36 +1,23 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=/home/shimanov/.config/nvim/bundle/Vundle.vim
-call vundle#begin('/home/shimanov/.config/nvim/bundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('/home/mmsh/.config/nvim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'dense-analysis/ale'
-Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python highlight
-Plugin 'sheerun/vim-polyglot'
-Plugin 'luochen1990/rainbow' " Brackets highlight
-Plugin 'drewtempelmeyer/palenight.vim' " Main highlight
-Plugin 'vim-airline/vim-airline' " Status bar
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
+Plug 'dense-analysis/ale'
+"Plug 'numirias/semshi',{'do': ':UpdateRemotePlugins'} " Python highlight
+Plug 'sheerun/vim-polyglot'
+Plug 'luochen1990/rainbow' " Brackets highlight
+Plug 'drewtempelmeyer/palenight.vim' " Main highlight
+Plug 'vim-airline/vim-airline' " Status bar
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+
 " Put your non-Plugin stuff after this line
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
