@@ -5,7 +5,6 @@ call plug#begin('/home/mmsh/.config/nvim/plugged')
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 "Plug 'numirias/semshi',{'do': ':UpdateRemotePlugins'} " Python highlight
 Plug 'sheerun/vim-polyglot'
@@ -13,7 +12,6 @@ Plug 'luochen1990/rainbow' " Brackets highlight
 Plug 'drewtempelmeyer/palenight.vim' " Main highlight
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()            " required
 filetype plugin indent on    " required
