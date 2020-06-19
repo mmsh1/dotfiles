@@ -31,8 +31,8 @@ alert = #bd2c40
 monitor = ${env:MONITOR:}
 width = 100%
 height = 22
-offset-x = 25
-offset-y = 25
+offset-x = 0
+offset-y = 5
 radius = 6.0
 fixed-center = true
 
@@ -112,19 +112,21 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-monitor = %name%
+
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
