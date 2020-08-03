@@ -19,7 +19,8 @@ set guioptions ""
 
 # zathurarc-dark
 
-set font "inconsolata 15"
+set font "inconsolata 10"
+set guioptions s
 set default-bg "#1E1E1E" #00
 set default-fg "#E6D4A3" #01
 
