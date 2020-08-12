@@ -14,6 +14,11 @@ alt + d
 alt + shift + x
     betterlockscreen -l
 
+# take screenshot
+alt + shift + s
+    scrot ~/pix/scrsht/%b%d::%H%M%S.png
+
+
 # make sxhkd reload its configuration files:
 alt + Escape
     pkill -USR1 -x sxhkd
