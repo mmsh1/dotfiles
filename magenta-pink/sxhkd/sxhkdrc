@@ -8,7 +8,7 @@ alt + Return
 
 # program launcher
 alt + d
-    rofi -show run
+    dmenu_run
 
 # lock screen
 alt + shift + x
