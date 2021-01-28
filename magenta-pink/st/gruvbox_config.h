@@ -1,27 +1,25 @@
 /* See LICENSE file for copyright and license details. */
 
-/*
- * appearance
- *
- * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
- */
 
 /* for nostalgic atmospere. font zip is here https://int10h.org/oldschool-pc-fonts/fontlist/ */
+/*static char *font = "MxPlus AST PremiumExec:pixelsize=30:antialias=true:autohint=false";*/
 
-static char *font = "MxPlus AST PremiumExec:pixelsize=22:antialias=true:autohint=false";
-/*static char *font = "Source Code Pro:pixelsize=16:antialias=true:autohint=true";*/
+static char *font = "JetBrainsMono-Regular:pixelsize=20:antialias=true:autohint=true";
+/*static char *font = "Source Code Pro:pixelsize=20:antialias=true:autohint=true";*/
 static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
- * 2: utmp option
+ * 2: scroll and/or utmp
  * 3: SHELL environment variable
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
 static char *shell = "/bin/sh";
 char *utmp = NULL;
+/* scroll program: to enable use a string like "scroll" */
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -45,9 +43,18 @@ static unsigned int tripleclicktimeout = 600;
 /* alt screens */
 int allowaltscreen = 1;
 
-/* frames per second st should at maximum draw to the screen */
-static unsigned int xfps = 120;
-static unsigned int actionfps = 30;
+/* allow certain non-interactive (insecure) window operations such as:
+   setting the clipboard text */
+int allowwindowops = 0;
+
+/*
+ * draw latency range in ms - from new content/keypress/etc until drawing.
+ * within this range, st draws when content stops arriving (idle). mostly it's
+ * near minlatency, but it waits longer for slow updates to avoid partial draw.
+ * low minlatency will tear/flicker more, as it can "detect" idle too early.
+ */
+static double minlatency = 8;
+static double maxlatency = 33;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -88,7 +95,7 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    /* 8 normal colors */
+/* 8 normal colors */
     [0] = "#1e1e1e",
     [1] = "#be0f17",
     [2] = "#868715",
@@ -111,7 +118,7 @@ static const char *colorname[] = {
     [255] = 0,
 
     /* special colors */
-    [256] = "#1e1e1e", /* background */
+    [256] = "#2b3133", /* background */
     [257] = "#e6d4a3" /* foreground */
 
     /* more colors can be added after 255 to use with DefaultXX */
@@ -174,10 +181,12 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
-	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
-	/*{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },*/
+	{ ShiftMask,			Button4, kscrollup,		 {.i = 1} },
+	{ ShiftMask,			Button5, kscrolldown,	 {.i = 1} },
+	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
+	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
+	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
 };
 
