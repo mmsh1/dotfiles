@@ -1,18 +1,18 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-call plug#begin('/home/mmsh/.config/nvim/bundle')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
-Plug 'luochen1990/rainbow' " Brackets highlight
-Plug 'morhetz/gruvbox' " Main highlight
-Plug 'vim-airline/vim-airline' " Status bar
+Plug 'luochen1990/rainbow'		" Brackets highlight
+Plug 'morhetz/gruvbox'			" Main highlight
+Plug 'vim-airline/vim-airline'	" Status bar
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-call plug#end()            " required
-filetype plugin indent on    " required
+call plug#end()					" required
+filetype plugin indent on		" required
 
 " Put your non-Plugin stuff after this line
 
@@ -25,7 +25,7 @@ set softtabstop=4	" number of spaces in tab when editing
 set shiftwidth=4	" number of spaces to use for autoindent
 set expandtab		" tabs are space
 set autoindent
-set copyindent		 " copy indent from the previous line
+set copyindent		" copy indent from the previous line
 " }}} Spaces & Tabs"
 
 " UI Config {{{
@@ -65,6 +65,7 @@ syntax enable
 set t_Co=256
 set background=dark
 colorscheme gruvbox
+
 "in my i3 it creates ugly border in bottom and right sides
 "maybe it works better in bspwm
 "set termguicolors
