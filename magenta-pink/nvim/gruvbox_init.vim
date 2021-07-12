@@ -3,10 +3,8 @@ filetype off                  " required
 
 call plug#begin('/home/mmsh/.config/nvim/bundle')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python highligh
 Plug 'sheerun/vim-polyglot'
 Plug 'luochen1990/rainbow' " Brackets highlight
 Plug 'morhetz/gruvbox' " Main highlight
