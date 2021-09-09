@@ -14,21 +14,16 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()					" required
 filetype plugin indent on		" required
 
-" Put your non-Plugin stuff after this line
-
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" Spaces & Tabs {{{
 set tabstop=4		" number of visual spaces per TAB
 set softtabstop=4	" number of spaces in tab when editing
 set shiftwidth=4	" number of spaces to use for autoindent
 "set expandtab		" tabs are space
 set autoindent
 set copyindent		" copy indent from the previous line
-" }}} Spaces & Tabs"
 
-" UI Config {{{
 set hidden
 set number                   " show line number
 set showcmd                  " show command in bottom bar
@@ -41,8 +36,6 @@ set noswapfile
 
 set list " Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:« " Unprintable chars mapping
-
-" }}} UI Config
 
 let g:gruvbox_italic=1
 let g:gruvbox_bold=1

@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-
 /* for nostalgic atmospere. font zip is here https://int10h.org/oldschool-pc-fonts/fontlist/ */
 /*static char *font = "MxPlus AST PremiumExec:pixelsize=30:antialias=true:autohint=false";*/
 
