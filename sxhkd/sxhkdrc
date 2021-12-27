@@ -18,6 +18,9 @@ alt + shift + x
 alt + shift + s
     scrot ~/pix/scrsht/%b%d::%H%M%S.png
 
+# change keyboard layout
+alt + space
+	{setxkbmap us, setxkbmap ru}
 
 # make sxhkd reload its configuration files:
 alt + Escape

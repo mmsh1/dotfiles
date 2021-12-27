@@ -30,7 +30,6 @@ xrandr --output HDMI1 --auto --left-of HDMI2
 
 xsetroot -cursor_name left_ptr
 #xsetroot -solid "#BE616B"
-setxkbmap -option grp:alt_space_toggle us,ru &
 
 # --no-xinerama allows to strech wallp on dual monotor set
 feh --bg-fill --no-xinerama ~/pix/wlp/gray-scale-photo-of-body-of-water-194735.jpg
