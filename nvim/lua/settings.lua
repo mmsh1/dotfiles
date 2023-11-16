@@ -7,13 +7,15 @@ cmd "filetype indent plugin on"
 cmd "syntax enable"
 cmd "autocmd Colorscheme * highlight Normal ctermbg=NONE"
 
+g.ale_go_golangci_lint_package = 1
+
 g.gruvbox_contrast_dark = 'hard'
 g.gruvbox_italic = 1
 g.gruvbox_bold = 1
 g.gruvbox_underline = 1
 g.gruvbox_undercurl = 1
 
---g.go_metalinter_command = 'golangci-lint' --TODO make separate shortcut for golangci and default linter
+g.go_metalinter_command = 'golangci-lint' --TODO make separate shortcut for golangci and default linter
 
 g.rainbow_active = 1
 
