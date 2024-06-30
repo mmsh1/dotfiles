@@ -27,7 +27,7 @@ fi
 
 # start some nice programs
 sxhkd &
-picom &
+picom --config ~/.config/picom/picom.conf &
 pipewire &
 wireplumber &
 exec bspwm
