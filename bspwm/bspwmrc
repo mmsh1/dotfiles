@@ -1,11 +1,30 @@
-#! /bin/sh
+#! /bin/bash
 
-#single display
-#bspc monitor -d I II III IV V VI VII VIII IX X
-
-#multiple displays
-bspc monitor HDMI1 -d 1 3 5 7 9
-bspc monitor HDMI2 -d 2 4 6 8 10
+# Two monitors
+if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
+	bspc monitor eDP1 -d 1 3 5 7 9
+	bspc monitor HDMI1 -d 2 4 6 8 10
+	xrandr --output eDP1 --auto --left-of HDMI1
+# Single monitor
+else
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+    xrandr --output HDMI1 --off
+    # Remove nodes
+    while bspc node @V: --kill; do
+        :
+    done
+    while bspc node @VI: --kill; do
+        :
+    done
+    while bspc node @VII: --kill; do
+        :
+    done
+    while bspc node @VIII: --kill; do
+        :
+    done
+    # Remove monitor
+    bspc monitor HDMI1 -r
+fi
 
 bspc config border_width         2
 bspc config window_gap          15
@@ -20,20 +39,18 @@ bspc config active_border_color '#0C1115'
 bspc config normal_border_color '#0C1115'
 bspc config focused_border_color '#F1F1F1'
 
-#since sxhkd ceased work with lightdm until killed and restarted,
+#since sxhkd ceased to work with lightdm until killed and restarted,
 #theese two lines were added
 pkill sxhkd
 sxhkd &
-
-#for multiple displays
-xrandr --output HDMI1 --auto --left-of HDMI2
 
 xsetroot -cursor_name left_ptr
 #xsetroot -solid "#BE616B"
 
 # --no-xinerama allows to strech wallp on dual monotor set
-feh --bg-fill --no-xinerama ~/pix/wlp/gray-scale-photo-of-body-of-water-194735.jpg
-#feh --bg-scale --no-xinerama ~/pix/wlp/jacky-zeng-tqsfdwxRyq4-unsplash.jpg
+#feh --bg-fill --no-xinerama ~/pix/wlp/gray-scale-photo-of-body-of-water-194735.jpg
+feh --bg-fill ~/pix/wlp/arc.jpg
+#feh --bg-fill ~/pix/wlp/waves_black.png
 
 #These two lines should be at the bottom to work properly with two displays
 #TODO replace with lemonbar
