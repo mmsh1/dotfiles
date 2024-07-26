@@ -1,16 +1,16 @@
 #! /bin/bash
 
 # Two monitors
-if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
-	bspc monitor eDP1 -d 1 3 5 7 9
-	bspc monitor HDMI1 -d 2 4 6 8 10
-	xrandr --output eDP1 --auto --left-of HDMI1
+if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
+	bspc monitor eDP-1 -d 1 3 5 7 9
+	bspc monitor HDMI-1 -d 2 4 6 8 10
+	xrandr --output eDP-1 --auto --left-of HDMI-1
 # Single monitor
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-    xrandr --output HDMI1 --off
+    xrandr --output HDMI-1 --off
     # Remove monitor
-    bspc monitor HDMI1 -r
+    bspc monitor HDMI-1 -r
 fi
 
 bspc config border_width         2
