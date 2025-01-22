@@ -1,5 +1,7 @@
 vim.cmd("autocmd Colorscheme * highlight Normal ctermbg=NONE guibg=NONE")
-vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE")
+vim.cmd("autocmd ColorScheme * highlight DiagnosticSignWarn guifg=Orange")
+vim.cmd("autocmd ColorScheme * highlight DiagnosticSignError guifg=Red")
 
 local opt = vim.opt
 
@@ -23,7 +25,7 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true  -- if you include mixed case in you search, assumes you want case-sensitive
 
 -- cursor line
-opt.cursorline = true
+opt.cursorline = false
 
 -- appearance
 opt.background = 'dark'
