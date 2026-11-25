@@ -8,6 +8,9 @@ return {
       options = {
         disabled_filetypes = {'NvimTree'},
         theme = "gruvbox",
+        section_separators = '',   -- No arrows (Industrial look)
+        component_separators = '', -- Pipes (Industrial look)
+        globalstatus = false,      -- Set to true if you want one bar for all splits
       },
       sections = {
         lualine_b = {},
