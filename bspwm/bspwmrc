@@ -1,16 +1,16 @@
 #! /bin/bash
 
 # Two monitors
-if [[ $(xrandr -q | grep 'HDMI-1 connected') ]]; then
-	bspc monitor eDP-1 -d 1 3 5 7 9
-	bspc monitor HDMI-1 -d 2 4 6 8 10
-	xrandr --output eDP-1 --auto --left-of HDMI-1
+if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
+	bspc monitor eDP -d 1 3 5 7 9
+	bspc monitor HDMI-A-0 -d 2 4 6 8 10
+	xrandr --output eDP --auto --output HDMI-A-0 --auto --scale 1.7x1.7 --right-of eDP
 # Single monitor
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-    xrandr --output HDMI-1 --off
-    # Remove monitor
-    bspc monitor HDMI-1 -r
+	xrandr --output HDMI-A-0 --off
+	# Remove monitor
+	bspc monitor HDMI-A-0 -r
 fi
 
 bspc config border_width         2
@@ -26,19 +26,10 @@ bspc config active_border_color '#0C1115'
 bspc config normal_border_color '#0C1115'
 bspc config focused_border_color '#F1F1F1'
 
-#since sxhkd ceased to work with lightdm until killed and restarted,
-#theese two lines were added
-pkill sxhkd
-sxhkd &
-
 xsetroot -cursor_name left_ptr
-#xsetroot -solid "#BE616B"
 
-# --no-xinerama allows to strech wallp on dual monotor set
-#feh --bg-fill --no-xinerama ~/pix/wlp/gray-scale-photo-of-body-of-water-194735.jpg
 feh --bg-fill ~/pix/wlp/arc.jpg
-#feh --bg-fill ~/pix/wlp/waves_black.png
 
-#These two lines should be at the bottom to work properly with two displays
 #TODO replace with lemonbar
 $HOME/.config/polybar/launch.sh
+$HOME/.config/bspwm/monitor-hotplug.sh &
