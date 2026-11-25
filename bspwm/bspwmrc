@@ -26,13 +26,16 @@ bspc config gapless_monocle      true
 
 bspc rule -a Zathura state=tiled
 
-bspc config active_border_color '#404040'
+#bspc config active_border_color '#404040'
+#bspc config normal_border_color '#2c2c2c'
+#bspc config focused_border_color '#404040'
+bspc config active_border_color '#808080'
 bspc config normal_border_color '#2c2c2c'
-bspc config focused_border_color '#404040'
+bspc config focused_border_color '#808080'
 
 xsetroot -cursor_name left_ptr
 
-feh --bg-fill ~/pix/wlp/dune.jpg
+feh --bg-fill ~/pix/wlp/waves_black.png
 
 #TODO replace with lemonbar
 $HOME/.config/polybar/launch.sh
